@@ -7,7 +7,21 @@ function changeState(state, action) {
   }
 }
 
+function render(){
+  document.body.textContent = state.count;
+}
+ 
+function dispatch(action){
+  state = changeState(state, action)
+  return state;
+}
+
 let state = { count: 0 };
 let action = { type: "counter/increment" };
 
 changeState(state, action);
+
+
+dispatch(action)
+render()
+
